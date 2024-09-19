@@ -1,0 +1,300 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(to right, #111, #444);
+  color: #fff;
+  background-attachment: fixed;
+}
+
+h2, p {
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #00c6ff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Fix for the overlap issue */
+main {
+  padding-top: 150px; /* Ensures content starts below the fixed header */
+}
+
+/* Flexbox for Nav Bar */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#header-img {
+  width: 120px;
+  transition: transform 0.3s ease;
+}
+
+#header-img:hover {
+  transform: scale(1.1);
+}
+
+/* Flexbox layout for nav-bar */
+#nav-bar {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  color: #00c6ff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #ffcc00;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #00c6ff;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Section Styles */
+.section {
+  padding: 100px 20px;
+  margin-top: 100px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.section-title {
+  font-family: 'Anton', sans-serif;
+  font-size: 3rem;
+  background: linear-gradient(45deg, #00c6ff, #ffcc00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 20px;
+}
+
+.section-desc {
+  font-family: 'Baskervville', serif;
+  font-size: 1.1rem;
+  color: #bbb;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+}
+
+/* Feature List */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.feature-list li {
+  font-size: 1.3rem;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.feature-list li:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.feature-list i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ffcc00;
+}
+
+/* Pricing List */
+.pricing-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pricing-list li {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.pricing-list li:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Video Section */
+.video-section {
+  padding: 50px 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+}
+
+#video {
+  width: 80%;
+  max-width: 800px;
+  height: 450px;
+  border: 3px solid #00c6ff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 198, 255, 0.5);
+}
+
+/* Form Section */
+.form-section {
+  padding: 50px 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  max-width: 500px;
+  width: 100%;
+}
+
+form label {
+  font-size: 1.2rem;
+  color: #00c6ff;
+  margin-bottom: 15px;
+}
+
+form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #00c6ff;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  transition: border-color 0.3s ease;
+}
+
+form input[type="email"]:focus {
+  outline: none;
+  border-color: #ffcc00;
+}
+
+form input[type="submit"] {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #00c6ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #ffcc00;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  margin-top: 50px;
+}
+
+footer p {
+  font-size: 1rem;
+  font-family: 'Baskervville', serif;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  #nav-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section {
+    padding: 80px 20px;
+  }
+
+  .feature-list, .pricing-list {
+    flex-direction: column;
+  }
+
+  .form-section {
+    padding: 30px 20px;
+  }
+
+  #video {
+    width: 90%;
+    height: auto;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
